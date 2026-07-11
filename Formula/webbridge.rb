@@ -24,6 +24,13 @@ class Webbridge < Formula
 
   def caveats
     <<~EOS
+      Launch from the terminal with `webbridge`, or open the bundle directly:
+        open #{opt_libexec}/WebBridge.app
+
+      To show it in Spotlight, Launchpad and the Dock, symlink it into /Applications:
+        ln -sfn #{opt_libexec}/WebBridge.app /Applications/WebBridge.app
+      (remove that symlink by hand if you later uninstall.)
+
       WebBridge needs `adb` for Android debugging. Install it with:
         brew install --cask android-platform-tools
     EOS
