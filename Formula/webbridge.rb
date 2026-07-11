@@ -5,9 +5,8 @@ class Webbridge < Formula
   sha256 "c044c37452e8b145ca056ba6de5b7f16c8d3f37d3f390ccf21b3061854f28b59"
   license "MIT"
 
-  depends_on "android-platform-tools"
-  depends_on "ios-webkit-debug-proxy"
   depends_on xcode: ["26.0", :build]
+  depends_on "ios-webkit-debug-proxy"
   depends_on macos: :tahoe
 
   def install
@@ -23,7 +22,14 @@ class Webbridge < Formula
     bin.write_exec_script app/"Contents/MacOS/WebBridge"
   end
 
+  def caveats
+    <<~EOS
+      WebBridge needs `adb` for Android debugging. Install it with:
+        brew install --cask android-platform-tools
+    EOS
+  end
+
   test do
-    assert_predicate libexec/"WebBridge.app/Contents/MacOS/WebBridge", :exist?
+    assert_path_exists libexec/"WebBridge.app/Contents/MacOS/WebBridge"
   end
 end
