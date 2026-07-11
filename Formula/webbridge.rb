@@ -1,8 +1,8 @@
 class Webbridge < Formula
   desc "Native macOS cockpit for Android & iOS webview debugging"
   homepage "https://github.com/hesennivas/webbridge"
-  url "https://github.com/hesennivas/webbridge/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "REPLACE_WITH_ACTUAL_SHA256"
+  url "https://github.com/hesennivas/webbridge/archive/refs/tags/v0.0.1.tar.gz"
+  sha256 "c044c37452e8b145ca056ba6de5b7f16c8d3f37d3f390ccf21b3061854f28b59"
   license "MIT"
 
   depends_on "android-platform-tools"
